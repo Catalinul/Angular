@@ -1,0 +1,24 @@
+● src
++---● app
+|   +--● comenzi
+|   |  |--comenzi.component.ts|.html|.css
+|   |  +--● comanda
+|   |  |  |--comanda.component.ts|.html|.css
+|   |  +--● comanda-item
+|   |  |  |--comanda-item.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--client.model.ts
+|   |     |--client.service.ts  
+|   |     |--item.model.ts
+|   |     |--item.service.ts 
+|   |     |--comanda-item.model.ts
+|   |     |--comanda.model.ts
+|   |     |--comanda.service.ts  
+|   |
+|   |--app.module.ts
+|
++---● environments  
+|   |--environment.ts (saved apiUrl)
+|
+|--index.html (cdn path for bootstrap and font awesome icon)
