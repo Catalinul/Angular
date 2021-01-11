@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ComandaItemeComponent } from '../comanda-iteme/comanda-iteme.component';
 import { ComandaService } from './../../shared/comanda.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -12,7 +15,7 @@ import { ComandaService } from './../../shared/comanda.service';
 
 export class ComandaComponent implements OnInit {
 
-  constructor(public service: ComandaService) { }
+  constructor(public service: ComandaService, public dialog:MatDialog) { }
 
   ngOnInit() {
     this.resetForm();
@@ -33,8 +36,17 @@ export class ComandaComponent implements OnInit {
 
     this.service.comandaIteme = [];
   }
+
+
+  AdaugaEditeazaItemComanda(comandaItemIndex: any, ComandaID: any){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true; //previne dialogul de a se inchide atunci cand apasam in afra dialogului
+    dialogConfig.width = "50%";
+    dialogConfig.data = {comandaItemIndex, ComandaID};
+     this.dialog.open(ComandaItemeComponent,dialogConfig);
+  };
+  
 }
 
-// AdaugaEditeazaItemComanda(comandaItemIndex, ComandaID){
-
-// };
+ 
