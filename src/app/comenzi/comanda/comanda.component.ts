@@ -47,6 +47,10 @@ export class ComandaComponent implements OnInit {
      this.dialog.open(ComandaItemeComponent,dialogConfig);
   };
   
+  StergeItemComanda(comandaItemID: number, i: number){
+      this.service.comandaIteme.splice(i,1);
+  }
+
 }
 
  

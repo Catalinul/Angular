@@ -1,4 +1,4 @@
 export class Client {
-    ClientID: number; 
-    Nume: string;
+    ClientID!: number; 
+    Nume!: string;
 }

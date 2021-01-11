@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
@@ -16,14 +18,17 @@ import { ComandaService } from './shared/comanda.service';
     AppComponent,
     ComenziComponent,
     ComandaComponent,
-    ComandaItemeComponent
+    ComandaItemeComponent,
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule
+
   ],
   entryComponents: [ComandaItemeComponent], //pentru a putea deschide aceasta componenta intr-un pop-up
   providers: [ComandaService],
