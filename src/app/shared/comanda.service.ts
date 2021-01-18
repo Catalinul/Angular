@@ -30,4 +30,8 @@ export class ComandaService {
   getComandaById(id: number) :any { //luat din ComandaController.cs
     return this.http.get(environment.apiURL + '/Comanda/' + id).toPromise(); 
   }
+
+  stergeComanda(id: number){ //luat din ComandaController.cs
+    return this.http.delete(environment.apiURL + '/Comanda/' + id).toPromise(); 
+  }
 }

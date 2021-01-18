@@ -52,7 +52,8 @@ export class ComandaComponent implements OnInit {
       ComandaNr: Math.floor(100000 + Math.random()*900000).toString(), //se face un numar random de 6 cifre
       ClientID: 0,
       MetPlata: '',
-      Total: 0
+      Total: 0,
+      ItemeComenziSterseID: ''
     };
 
     this.service.comandaIteme = [];
@@ -71,8 +72,12 @@ export class ComandaComponent implements OnInit {
   };
   
   StergeItemComanda(comandaItemID: number, i: number){
+      if (comandaItemID != null) //daca nu e nul, item-ul respectiv e deja prezent in tabela ComandaIteme
+        this.service.formData.ItemeComenziSterseID += comandaItemID + ",";
+        
       this.service.comandaIteme.splice(i,1);
       this.updateTotal(); //actualizam totalul comenzii
+
   }
 
   updateTotal(){ //functie care actualizeaza totalul comenzii
