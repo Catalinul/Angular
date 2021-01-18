@@ -60,7 +60,7 @@ export class ComandaItemeComponent implements OnInit {
     this.updateTotal(); //ca sa se actualizeze totalul si atunci cand se selecteaza alt produs
   }
 
-  updateTotal(){ //face update la cantitate
+  updateTotal(){ //face update la pretul total al unui produs din comanda
     this.formData.Total = parseFloat((this.formData.Cantitate * this.formData.Pret).toFixed(2));
   }
 

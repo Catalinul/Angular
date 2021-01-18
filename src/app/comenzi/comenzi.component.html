@@ -1,1 +1,24 @@
-<p>comenzi works!</p>
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+        <th>#Comanda Nr.</th>
+        <th>#Client</th>
+        <th>#Metoda plata</th>
+        <th>#Total</th>
+        <th>
+            <a class="btn btn-sm btn-success text-white" routerLink="/comanda"><i class="fa fa-plus square"></i> Creeaza comanda</a>
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of comandaList">
+            <th  (click)="deschidePentruEditare(item.ComandaID)">{{item.ComandaNr}}</th>
+            <td (click)="deschidePentruEditare(item.ComandaID)">{{item.Client}}</td>
+            <td (click)="deschidePentruEditare(item.ComandaID)">{{item.MetPlata}}</td>
+            <td (click)="deschidePentruEditare(item.ComandaID)">{{item.Total}}</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

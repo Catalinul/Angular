@@ -4,11 +4,11 @@ import { ComandaComponent } from './comenzi/comanda/comanda.component';
 import { ComenziComponent } from './comenzi/comenzi.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'comanda',pathMatch:'full'},
-  {path:'comenzi',component:ComenziComponent},
-  {path:'comanda',children:[
-    {path:'',component:ComandaComponent}, 
-    {path:'edit/:id',component:ComandaComponent} 
+  {path:'',redirectTo:'comanda', pathMatch:'full'},
+  {path:'comenzi', component:ComenziComponent},
+  {path:'comanda', children:[
+    {path:'', component:ComandaComponent}, 
+    {path:'edit/:id', component:ComandaComponent} 
   ]}
 ];
 
@@ -16,4 +16,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
