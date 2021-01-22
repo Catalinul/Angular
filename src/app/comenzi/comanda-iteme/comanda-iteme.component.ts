@@ -1,10 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { NgForm } from '@angular/forms';
+
+import { ComandaService } from 'src/app/shared/comanda.service';
 import { ComandaItem } from 'src/app/shared/comanda-item.model';
 import { ItemService } from 'src/app/shared/item.service';
 import { Item } from 'src/app/shared/item.model';
-import { NgForm } from '@angular/forms';
-import { ComandaService } from 'src/app/shared/comanda.service';
+
 
 @Component({
   selector: 'app-comanda-iteme',
@@ -19,10 +21,11 @@ export class ComandaItemeComponent implements OnInit {
   isValid: boolean = true;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data, //pentru a folosi constanta 
-    public MatDialogRef:MatDialogRef<ComandaItemeComponent>,
-    private itemService:ItemService,
-    private comandaService:ComandaService) { }
+    @Inject(MAT_DIALOG_DATA) 
+    public data, //pentru a folosi constanta 
+    public MatDialogRef: MatDialogRef<ComandaItemeComponent>,
+    private itemService: ItemService,
+    private comandaService: ComandaService) { }
 
   ngOnInit(): void {
 

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ComandaItemeComponent } from '../comanda-iteme/comanda-iteme.component';
-import { ComandaService } from './../../shared/comanda.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ClientService } from 'src/app/shared/client.service';
-import { Client } from 'src/app/shared/client.model';
 import { ToastrService } from 'ngx-toastr';
 
+import { ClientService } from 'src/app/shared/client.service';
+import { Client } from 'src/app/shared/client.model';
+import { ComandaItemeComponent } from '../comanda-iteme/comanda-iteme.component';
+import { ComandaService } from './../../shared/comanda.service';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class ComandaComponent implements OnInit {
 
   clientList!: Client[];
   isValid: boolean = true;
+  
   constructor(public service: ComandaService, 
     public dialog:MatDialog,
     public clientService: ClientService,
@@ -28,7 +29,9 @@ export class ComandaComponent implements OnInit {
     private currentRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
     let comandaID = this.currentRoute.snapshot.paramMap.get('id');
+
     if (comandaID == null) //operatie de insert
      this.resetForm();
     else  //operatie de update a unei comenzi
@@ -37,6 +40,7 @@ export class ComandaComponent implements OnInit {
         this.service.formData = res.comanda;
         this.service.comandaIteme = res.comandaDetalii;
       })
+
     }
 
     this.clientService.getClientList().then(res => this.clientList = res as Client[]);
@@ -66,8 +70,9 @@ export class ComandaComponent implements OnInit {
     dialogConfig.disableClose = true; //previne dialogul de a se inchide atunci cand apasam in afra dialogului
     dialogConfig.width = "50%";
     dialogConfig.data = {comandaItemIndex, ComandaID};
+    
      this.dialog.open(ComandaItemeComponent,dialogConfig).afterClosed().subscribe( res => {
-      this.updateTotal(); //functia va fi aplata de fiecare data cand inchidem dialog-ul de adaugare al prodouselor
+      this.updateTotal(); //functia va fi apelata de fiecare data cand inchidem dialog-ul de adaugare al prodouselor
      })
   };
   

@@ -8,8 +8,6 @@ export class ItemService {
 
   constructor(private http:HttpClient) { }
 
-
-
   getItemList(){ //luat din ItemController.cs
     return this.http.get(environment.apiURL + '/Item').toPromise(); 
   }

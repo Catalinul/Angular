@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { ComandaComponent } from './comenzi/comanda/comanda.component';
 import { ComenziComponent } from './comenzi/comenzi.component';
 

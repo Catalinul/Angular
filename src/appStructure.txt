@@ -1,24 +1,28 @@
 ● src
 +---● app
 |   +--● comenzi
-|   |  |--comenzi.component.ts|.html|.css
+|   |  |--comenzi.component.html| - Componenta HTML a paginii in care putem sa vedem comenzile deja efectuate.
+|   |  |--comenzi.component.ts  | - Clasa typescript ce contine lista comenzilor si metode asupra acestora.
 |   |  +--● comanda
-|   |  |  |--comanda.component.ts|.html|.css
+|   |  |  |--comanda.component.ts  | - Clasa typescript ce contine detaliile unei comenzi, lista produselor dintr-o comanda, lista clientilor si metode asupra acestora.
+|   |  |  |--comanda.component.html| - Componeneta HTML principala a paginii, de unde putem sa efectuam o comanda si sa accesam celelate parti ale aplicatiei.
 |   |  +--● comanda-item
-|   |  |  |--comanda-item.component.ts|.html|.css
+|   |  |  |--comanda-iteme.component.ts  | Clasa typescript ce contine functiile necesare pentru popularea si actualizarea formarului de comandare al unui produs.
+|   |  |  |--comanda-iteme.component.html| Componenta HTML a paginii responsabila pentru formularul de a trimite o noua comanda.
 |   |  |
 |   |  +--● shared
-|   |     |--client.model.ts
-|   |     |--client.service.ts  
-|   |     |--item.model.ts
-|   |     |--item.service.ts 
-|   |     |--comanda-item.model.ts
-|   |     |--comanda.model.ts
-|   |     |--comanda.service.ts  
+|   |     |--client.model.ts      | Modelul pentru tabela de date Clienti.
+|   |     |--client.service.ts    | Clasa typescript ce contine functia care returneaza lista clientilor.
+|   |     |--item.model.ts        | Modelul pentru tabela de date Item.
+|   |     |--item.service.ts      | Clasa typescript ce contine functia care returneaza lista itemelor.
+|   |     |--comanda-item.model.ts| Modelul pentru tabela de date ComandaIteme.
+|   |     |--comanda.model.ts     | Modelul pentru tabela de date Comanda.
+|   |     |--comanda.service.ts   | Clasa typescript ce contine functiile pentru operatiile CRUD pe tabela Comanda.
 |   |
 |   |--app.module.ts
+|   |--app-routing.module.ts
 |
 +---● environments  
-|   |--environment.ts (saved apiUrl)
+|   |--environment.ts
 |
 |--index.html (cdn path for bootstrap and font awesome icon)
